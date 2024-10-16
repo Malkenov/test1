@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Homework {
+public class HomeworkPartTwo {
     public static void main(String[] args) {
         double rateUSD = 444.06;
         double rateEUR = 489.32;
@@ -9,18 +9,18 @@ public class Homework {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Сколько денег у вас осталось до зарплаты?");
-        double moneyBeforeSalary = scanner.nextDouble(); // Считали число типа double
+        double moneyBeforeSalary = scanner.nextDouble();
 
-        System.out.println("Сколько дней до зарплаты?"); // Считали число типа int
+        System.out.println("Сколько дней до зарплаты?");
         int daysBeforeSalary = scanner.nextInt();
 
         System.out.println("Введите команду. Доступные команды: convert и advice.");
-        String command = scanner.next(); // Считали команду
+        String command = scanner.next();
 
         if (command.equals("convert")) {
-            String currency = "USD";
-            System.out.println("Вы хотите конвертировать тенге в " + currency);
 
+            System.out.println("В какую валюту хотите конвертировать тенге? Доступные варианты: USD, EUR, JPY.");
+            String currency = scanner.next(); // Считайте это значение с помощью scanner
             if (currency.equals("USD")) {
                 System.out.println("Ваши сбережения в долларах: " + moneyBeforeSalary / rateUSD);
             } else if (currency.equals("EUR")) {
@@ -32,7 +32,6 @@ public class Homework {
             }
 
         } else if (command.equals("advice")) {
-            // Здесь нужно давать советы
             if (moneyBeforeSalary < 15_000) {
                 System.out.println("Сегодня лучше поесть дома. Экономьте, и вы дотянете до зарплаты!");
             } else if (moneyBeforeSalary < 50_000) {
@@ -59,4 +58,3 @@ public class Homework {
         }
     }
 }
-
