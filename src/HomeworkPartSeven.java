@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HomeworkPartSix {
+public class HomeworkPartSeven {
     public static void main(String[] args) {
         // Ниже объявите пустой массив expenses для записи трат за неделю
         int[] expenses = new int[7];
@@ -68,12 +68,19 @@ public class HomeworkPartSix {
                 // Получите из консоли день, за который пользователь хочет указать расходы
                 int day = scanner.nextInt();
                 System.out.println("Введите размер траты:");
-                // Получите из консоли значение расходов и сохраните в переменной expense
-                int expense = scanner.nextInt();
-                // Сохраните полученное значение дневных трат в массив expenses
-                // Не забудьте прибавить новое значение к уже существующим тратам
-                expenses[day-1] = expense;
-                System.out.println("Значение сохранено!");
+                double expense = scanner.nextDouble();
+
+                moneyBeforeSalary -= expense; // Уменьшите баланс на сумму введённой траты
+                expenses[day-1] += expense;// Сохраните трату в массив
+
+                System.out.println("Значение сохранено! Ваш текущий баланс в тенге: " + moneyBeforeSalary);
+
+                if(moneyBeforeSalary<5000){
+                    System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");// Проверьте текущее значение баланса — не опустилось ли оно ниже отметки в 5000 тенге
+                }else{
+                    break;
+                }
+                // Выведите предупреждение: "На вашем счету осталось совсем немного. Стоит начать экономить!"
 
             } else if (command == 0) {
                 System.out.println("Выход");
@@ -84,3 +91,4 @@ public class HomeworkPartSix {
         }
     }
 }
+
