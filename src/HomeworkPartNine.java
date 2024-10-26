@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class HomeworkPartEight {
+public class HomeworkPartNine {
     public static void main(String[] args) {
         // Ниже объявите пустой массив expenses для записи трат за неделю
         int[] expenses = new int[7];
@@ -23,6 +23,7 @@ public class HomeworkPartEight {
             System.out.println("2 — Получить совет");
             System.out.println("3 - Ввести трату"); // Допишите вывод нового пункта меню
             System.out.println("4 - Показать траты за неделю");
+            System.out.println("5 — Показать самую большую сумму расходов за неделю");
             System.out.println("0 — Выход");
 
             int command = scanner.nextInt();
@@ -80,11 +81,18 @@ public class HomeworkPartEight {
                     System.out.println("На вашем счету осталось совсем немного. Стоит начать экономить!");// Проверьте текущее значение баланса — не опустилось ли оно ниже отметки в 5000 тенге
                 }
             } else if (command == 4) {
-                for(int i = 0;i < expenses.length; i++){
-                    System.out.println("День " + (i+1) + "." + "Потрачена " + expenses[i] + "тенге");
-            }
+                for (int i = 0; i < expenses.length; i++) {
+                    System.out.println("День " + (i + 1) + "." + "Потрачена " + expenses[i] + "тенге");
+                }
 
-            // Выведите предупреждение: "На вашем счету осталось совсем немного. Стоит начать экономить!"
+            }else if(command == 5){
+               int maxExpense = 0;
+               for(int i = 0;i < expenses.length;i++){
+                   if(expenses[i] > maxExpense ){
+                       maxExpense = expenses[i];
+                   }
+               }
+                System.out.println("Самая большая сумма расходов на этой неделе составила " + maxExpense + " тенге");
 
             } else if (command == 0) {
                 System.out.println("Выход");
