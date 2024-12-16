@@ -1,10 +1,9 @@
 public class Practices {
     public static void main(String[] args) {
-        Calendar noteBook = new Calendar();
-        noteBook.addNote("Зайти в магазин после работы.");
-        noteBook.addNote("Позвонить маме.");
+        Openable can = new Can();
+        can.open();
 
-        noteBook.deleteNote(0);
+        Openable window = new Window();
+        window.open();
     }
 }
-
