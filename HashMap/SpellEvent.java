@@ -6,6 +6,7 @@ public class SpellEvent {
     private String action; // описание заклинания
 
     public SpellEvent(int id, String eventType, String action){
+        this.id = id;
         this.eventType = eventType;
         this.action = action;
     }
